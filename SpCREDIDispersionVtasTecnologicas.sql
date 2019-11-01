@@ -34,5 +34,17 @@ CREATE PROCEDURE [dbo].[SpCREDIDispersionVtasTecnologicas]
 @ConceptoCtaBanco varchar(50)
 AS
 BEGIN
-	
+	SELECT TOP 3 c.cliente,c.Nombre,v.EnviarA,*
+	FROM Venta v WITH(NOLOCK)
+	JOIN VentaD vd WITH(NOLOCK) ON v.ID = vd.ID
+	JOIN cte c ON v.Cliente = c.Cliente
+	WHERE MOV = 'CREDILANA' 
+
+	SELECT * FROM cte WITH(NOLOCK) Where Cliente IN ('C01838546','C01550329','C01845801')
 END 
+
+--select distinct EnviarA from Venta where mov = 'credilana'
+--select DISTINCT* from ventasCanalMavi where categoria in ('ASOCIADOS','CREDITO MENUDEO','CREDILANA EMPRESARIO','DINERALIA') order by id
+--select * from ventasCanalMavi where CADENA in ('ANALISIS DE CREDITO','CREDILANA','SOLICITUD CHEQUE')
+
+
