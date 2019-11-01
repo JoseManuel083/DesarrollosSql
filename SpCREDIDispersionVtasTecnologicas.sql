@@ -17,14 +17,22 @@ GO
 -- DESARROLLO     : 
 -- MODULO         : CREDITO
 -- DESCRIPCION	  : Reporte Dispersion de Ventas Tecnologicas
--- DESARROLLO     : 
--- EJEMPLO	      : 
+-- EJEMPLO	      : EXEC SpCREDIDispersionVtasTecnologicas
 -- EJEMPLO        : 
---				  : 
-CREATE PROCEDURE [dbo].[SpCREDIDispersionVtasTecnologicas] @cuentaDima varchar(10),
-@periodoPago int,
-@ejercicioFiscal int
+CREATE PROCEDURE [dbo].[SpCREDIDispersionVtasTecnologicas] 
+@movimiento varchar(10),
+@Estatus varchar(10),
+@CanalDeVenta int,
+@Servicio varchar(15),
+@FechaDesde date,
+@FechaHasta date,
+@ImporteDesde money,
+@ImporteHast Money,
+@Cliente varchar(12),
+@BeneficiarioFinal varchar(12),
+@ReferenciaCtaBanco varchar(50),
+@ConceptoCtaBanco varchar(50)
 AS
 BEGIN
+	
 END 
-SELECT modulo from modulo 
